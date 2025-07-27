@@ -4,6 +4,7 @@ from typing import Optional
 import joblib
 import numpy as np
 import pandas as pd
+from preprocessor import DataPreprocessor
 
 # Load preprocessor and model
 preprocessor = joblib.load("models/preprocessor.joblib")
