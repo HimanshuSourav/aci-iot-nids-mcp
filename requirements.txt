@@ -1,8 +1,1 @@
-fastapi
-uvicorn
-joblib
-pydantic
-scikit-learn
-pandas
-tqdm
-
+mcp>=2,<3

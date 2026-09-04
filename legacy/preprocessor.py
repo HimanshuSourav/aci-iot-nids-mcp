@@ -188,14 +188,12 @@ class DataPreprocessor:
                 # but typically self.cat_columns should store the names of columns *before* encoding.
 
             self.progress.update("Scaling features (fitting scaler)")
+            # ISS-04: fit on all rows, then transform in batches.
+            self.scaler.fit(X)
             scaled_data = []
-            # Fit the scaler using batches for potentially very large datasets
-            for i in tqdm(range(0, len(X), self.batch_size), desc="Fitting & Scaling batches"):
+            for i in tqdm(range(0, len(X), self.batch_size), desc="Scaling batches"):
                 batch = X.iloc[i:i + self.batch_size]
-                if i == 0: # Fit and transform the first batch
-                    scaled_batch = self.scaler.fit_transform(batch)
-                else: # Only transform subsequent batches
-                    scaled_batch = self.scaler.transform(batch)
+                scaled_batch = self.scaler.transform(batch)
                 scaled_data.append(scaled_batch)
                 del batch
                 gc.collect()

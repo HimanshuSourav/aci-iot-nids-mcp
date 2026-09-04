@@ -1,0 +1,26 @@
+[project]
+name = "iot-anomaly-mcp"
+version = "0.1.0"
+description = "MCP server that proxies IoT anomaly FastAPI apps (full CIC + R7000 overlap)."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "mcp>=2,<3",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8",
+    "anyio>=4",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = ["server", "client", "schemas"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

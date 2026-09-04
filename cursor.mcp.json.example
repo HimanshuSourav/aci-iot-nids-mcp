@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "iot-anomaly": {
+      "command": "/home/hsourav/ml/cloud-full-cic/mcp/.venv/bin/python",
+      "args": ["/home/hsourav/ml/cloud-full-cic/mcp/server.py"],
+      "env": {
+        "IOT_ANOMALY_FULL_CIC_URL": "http://127.0.0.1:8000",
+        "IOT_ANOMALY_OVERLAP_URL": "http://127.0.0.1:8001"
+      }
+    }
+  }
+}
