@@ -45,7 +45,7 @@ OVERLAP_OPTIONAL: List[str] = [
 ]
 
 OVERLAP_NOTES = (
-    "r7000-overlap /predict: conntrack-emittable fields only. Rates are "
+    "edge-r7000 /predict: conntrack-emittable fields only. Rates are "
     "recomputed from core counters when omitted. Holdout XGBoost is ~86.5% "
     "on ACI overlap columns — not a live-router number. Default model: "
     "xgboost. Default URL: IOT_ANOMALY_OVERLAP_URL (http://127.0.0.1:8001)."
@@ -68,7 +68,7 @@ TIERS: Dict[str, Dict[str, Any]] = {
     "overlap": {
         "name": "overlap",
         "role": "Edge-feasible — OpenWrt R7000 conntrack overlap",
-        "repo": "r7000-overlap",
+        "repo": "edge-r7000",
         "serve": "uvicorn serve:app --port 8001",
         "default_url_env": "IOT_ANOMALY_OVERLAP_URL",
         "default_url": "http://127.0.0.1:8001",

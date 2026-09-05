@@ -33,7 +33,7 @@ def list_tiers() -> Dict[str, Any]:
         "tiers": [schema_for(name) for name in TIERS],
         "note": (
             "full_cic needs the cloud-full-cic API. overlap needs the "
-            "r7000-overlap API. Neither is started by this MCP server."
+            "edge-r7000 API. Neither is started by this MCP server."
         ),
     }
 
@@ -78,7 +78,7 @@ def predict_overlap(
     features: Dict[str, Any],
     model_name: Optional[str] = None,
 ) -> Dict[str, Any]:
-    """Predict using the r7000-overlap FastAPI /predict (conntrack fields).
+    """Predict using the edge-r7000 FastAPI /predict (conntrack fields).
 
     Args:
         features: Conntrack-emittable flow. Required: Protocol, Flow Duration,
@@ -108,7 +108,7 @@ def classify_conntrack_flow() -> str:
         "You have a conntrack-derived flow. Call describe_schema with "
         "tier='overlap', then predict_overlap with only those fields. "
         "Do not call predict_full_cic. If health(overlap) is not ready, "
-        "tell the user to start r7000-overlap with: "
+        "tell the user to start edge-r7000 with: "
         "uvicorn serve:app --port 8001"
     )
 

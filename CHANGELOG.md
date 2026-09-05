@@ -20,7 +20,7 @@ needed a way to call the hardened APIs.
 | `describe_schema` | required / optional JSON fields |
 | `health` | `/health` + `/ready` |
 | `predict_full_cic` | POST cloud-full-cic `:8000/predict` |
-| `predict_overlap` | POST r7000-overlap `:8001/predict` |
+| `predict_overlap` | POST edge-r7000 `:8001/predict` |
 
 Resources: `iot-anomaly://tiers`, `iot-anomaly://schema/{tier}`.
 
